@@ -4,7 +4,7 @@
   </v-row>
 </template>
 
-<script>
+<script lang="js">
 export default {
   name: 'IndexPage'
 }
