@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto my-12" max-width="600">
-    <v-img height="200" :src="imgUrl" :alt="title"></v-img>
+    <v-img height="200" :src="imgUrl || 'https://cdn.vuetifyjs.com/images/cards/cooking.png'" :alt="title"></v-img>
   
     <v-card-title>{{ title }}</v-card-title>
   
@@ -50,7 +50,7 @@ export default {
     },
     imgUrl: {
       type: String,
-      required: true
+      required: false,
     },
     rating: {
       type: Number,
