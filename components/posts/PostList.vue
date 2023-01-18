@@ -13,7 +13,7 @@
   </v-col>
 </template>
 <script>
-import PostDetails from './PostDetails.vue';
+import PostDetails from '@/components/posts/PostDetails.vue';
 
 export default {
     components: { PostDetails },

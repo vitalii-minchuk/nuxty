@@ -23,7 +23,7 @@
     <v-divider class="mx-4"></v-divider>
   
     <v-card-actions>
-      <nuxt-link :to="'/posts/' + 1">
+      <nuxt-link :to="'/admin/posts/' + 1">
         View details
       </nuxt-link>
     </v-card-actions>

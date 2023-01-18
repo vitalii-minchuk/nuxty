@@ -16,33 +16,40 @@
   </div>
 </template>
 <script>
-import AddPostForm from '../../components/posts/AddPostForm.vue';
-import PostList from '../../components/posts/PostList.vue';
+import AddPostForm from '@/components/posts/AddPostForm.vue';
+import PostList from '@/components/posts/PostList.vue';
 
 export default {
     components: { PostList, AddPostForm },
     data() {
       return {
         addPostDialog: false,
-        posts: [
-          {
-            id: '1',
-            title: 'Cafe Badilico',
-            text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
-            rating: 4,
-            desc: '$ • Italian, Cafe',
-            imgUrl: 'https://plus.unsplash.com/premium_photo-1661501114842-78d492e3acc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FmZSUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
-          },
-          {
-            id: '2',
-            title: 'Cafe Leonardo',
-            text: 'Salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
-            rating: 5,
-            desc: '$ • Italian, Cafe',
-            imgUrl: ''
-          },
-        ]
       }
+    },
+    asyncData(context, callback) {
+      console.log(context)
+      setTimeout(() => {
+        callback(null, {
+          posts: [
+            {
+              id: '1',
+              title: 'Cafe Badilico',
+              text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+              rating: 4,
+              desc: '$ • Italian, Cafe',
+              imgUrl: 'https://plus.unsplash.com/premium_photo-1661501114842-78d492e3acc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FmZSUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'
+            },
+            {
+              id: '2',
+              title: 'Cafe Leonardo',
+              text: 'Salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+              rating: 5,
+              desc: '$ • Italian, Cafe',
+              imgUrl: ''
+            },
+          ]
+        })
+      }, 1500)
     },
     methods: {
       openAddPostDialog() {
